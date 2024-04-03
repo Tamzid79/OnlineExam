@@ -1,28 +1,24 @@
-# Exam System
-## Installation
+# TXD79 Online Exam System
+## Requirements
+
 
 ```bash
-  git pull repository_url
+  User Management
 ```
 ```bash
-  cd project_file
+  Question Management
 ```
 ```bash
-  rename .env.example to .env
-```
-```bash
-  composer install
+  Exam Creation and Delivery
 ``` 
 ```bash
-  php artisan migrate
+  Result Management
 ```
 ```bash
-  php artisan db:seed
+  Reporting and Analytics
 ```
-```bash
-  php artisan serve
-```
-For sending mail notifications start queue server
+
+## For sending mail notifications start queue server
 ```bash
   php artisan queue:work
 ```

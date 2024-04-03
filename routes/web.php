@@ -54,5 +54,15 @@ Route::group(['middleware' => ['auth', 'student']],function(){
 
 Route::get('change-password', [dashboardController::class, 'showChangePasswordForm'])->middleware('auth')->name('changePassword');
 Route::post('change-password', [dashboardController::class, 'updatePassword'])->middleware('auth')->name('changePassword');
+Route::get('dashboard', function(){
+    $role = Auth::user()->role;
+    if($role == 'admin'){
+        return redirect()->route('admin.dashboard');
+    }
+    elseif($role == 'teacher'){
+        return redirect()->route('teacher.dashboard');
+    }
+    return redirect('/');
+})->middleware('auth')->name('dashboard');
 
 Auth::routes();
